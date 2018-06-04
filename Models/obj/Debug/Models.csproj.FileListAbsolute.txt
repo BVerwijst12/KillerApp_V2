@@ -1,0 +1,6 @@
+C:\Users\bramv\source\repos\KillerApp_V2\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\bramv\source\repos\KillerApp_V2\Models\bin\Debug\Models.dll
+C:\Users\bramv\source\repos\KillerApp_V2\Models\bin\Debug\Models.pdb
+C:\Users\bramv\source\repos\KillerApp_V2\Models\obj\Debug\Models.dll
+C:\Users\bramv\source\repos\KillerApp_V2\Models\obj\Debug\Models.pdb
+C:\Users\bramv\source\repos\KillerApp_V2\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache

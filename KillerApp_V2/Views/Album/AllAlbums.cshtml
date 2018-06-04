@@ -1,0 +1,19 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using Models
+@{
+    ViewBag.Title = "AllAlbums";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AllAlbums</h2>
+
+@foreach(Album a in Model)
+{
+    <div class="row">
+        <div class="photo">
+            <img src="@Url.Content(a.Coverurl)" class="img-responsive" alt="a" />
+        </div>
+        @a.Naam
+        @Html.ActionLink("bekijk", "ViewNummerOpAlbum", new { albumid = a.AlbumID, controller = "Album"})
+    </div>
+}

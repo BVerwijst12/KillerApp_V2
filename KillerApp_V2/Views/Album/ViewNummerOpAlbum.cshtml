@@ -1,0 +1,16 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using Models
+@model List<Nummer>
+@{
+    ViewBag.Title = "ViewNummerOpAlbum";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var n in Model)
+{
+<div class="col-12 row">
+    @n.Embedcode
+    @n.Naam
+    @n.Lengte
+</div>
+}

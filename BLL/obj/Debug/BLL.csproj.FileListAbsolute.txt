@@ -1,0 +1,11 @@
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\bin\Debug\BLL.dll
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\bin\Debug\BLL.pdb
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\bin\Debug\DAL.dll
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\bin\Debug\Models.dll
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\bin\Debug\DAL.pdb
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\bin\Debug\Models.pdb
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\obj\Debug\BLL.dll
+C:\Users\bramv\source\repos\KillerApp_V2\BLL\obj\Debug\BLL.pdb

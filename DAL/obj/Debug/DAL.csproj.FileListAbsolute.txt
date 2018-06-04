@@ -1,0 +1,9 @@
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\bin\Debug\DAL.dll
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\bin\Debug\DAL.pdb
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\bin\Debug\Models.dll
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\bin\Debug\Models.pdb
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\obj\Debug\DAL.dll
+C:\Users\bramv\source\repos\KillerApp_V2\DAL\obj\Debug\DAL.pdb

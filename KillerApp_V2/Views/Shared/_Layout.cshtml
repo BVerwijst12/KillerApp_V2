@@ -1,0 +1,62 @@
+﻿@using Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                </button>
+                @Html.ActionLink("Spotify 2.0", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            @{ 
+                var Gebruiker = Session["Gebruiker"] as Gebruiker;
+                var Playlist = Session["Playlist"] as Playlist;
+            }
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                @if (Gebruiker != null)
+                {
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item nav-link">@Html.ActionLink("Alle nummers", "Index", "Home")</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Alle artiesten","AllArtiest","Artiest")</li>                  
+                    <li class="nav-item nav-link">@Html.ActionLink("maak een lijst", "AddPlaylist",
+                       new { id = Gebruiker.GebruikerID, controller =  "Playlist" })</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Mijn lijsten","ViewPlaylist",
+                       new { id = Gebruiker.GebruikerID, controller = "Playlist"})</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Volgend","ViewVolgend",
+                       new { id = Gebruiker.GebruikerID, controller = "Playlist" })</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Openbare lijsten", "ViewOpenbaarPlaylist","Playlist")</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("logout","Logout","User")</li>
+                </ul>
+
+                }
+                else
+                {
+                 <ul class="nav navbar-nav mr-auto">          
+                    <li class="nav-item nav-link">@Html.ActionLink("login", "Login", "User")</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("register", "Register", "User")</li>
+                </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year Spotify2.0</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
