@@ -10,7 +10,7 @@ namespace DAL
 {
     public class UserEngine : IUserEngine
     {
-        public string Connectionstring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\users\bramv\source\repos\KillerApp_V2\KillerApp_V2\App_Data\KillerAppDB.mdf;Integrated Security=True";
+        public string Connectionstring = Database.GetConnectionString();
 
 
         public string Register(Gebruiker g)

@@ -1,0 +1,40 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using Models
+@model List<Playlist>    
+@{
+    ViewBag.Title = "ViewPlayList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Gebruiker = Session["Gebruiker"] as Gebruiker;
+}
+
+<h2>Openbare lijsten</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Naam</th>
+        </tr>
+    </thead>
+    @foreach (Playlist p in Model)
+    {
+        <div class="row">
+            <tbody>
+        <th scope="row">
+            @p.Naam
+        </th>
+        <td scope="row">
+            @Html.ActionLink("Bekijk", "ViewNummersInLijst", new { playlistid = p.PlaylistID, controller = "Playlist" })
+        </td>
+        <td scope="row">
+            @Html.ActionLink("Volgen", "VolgLijst", new
+            {
+                gebruikerid = Gebruiker.GebruikerID,
+                playlistid = p.PlaylistID,
+                controller = "Playlist"
+            })
+        </td>
+        </tbody>
+
+        </div>
+    }
+</table>
+

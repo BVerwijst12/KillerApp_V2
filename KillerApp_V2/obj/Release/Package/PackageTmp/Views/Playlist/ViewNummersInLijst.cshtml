@@ -1,0 +1,29 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using Models
+@model List<Nummer>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var nummer in Model)
+{
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="col-item">
+                <div class="photo">
+                    <img src="@Url.Content(nummer.CoverURL)" class="img-responsive" alt="a" />
+                </div>
+                <div class="info">
+                    <div class="row">
+                        @nummer.Naam <br />
+                        @nummer.Jaar <br />
+                        @nummer.Genre <br />
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

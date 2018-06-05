@@ -11,7 +11,7 @@ namespace DAL
 {
     public class PlaylistEngine : IPlaylistEngine
     {
-        string Connectionstring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\users\bramv\source\repos\KillerApp_V2\KillerApp_V2\App_Data\KillerAppDB.mdf;Integrated Security=True";
+        string Connectionstring = Database.GetConnectionString();
 
         public void GetByID(int id, Gebruiker g)
         {

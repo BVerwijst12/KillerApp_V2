@@ -1,0 +1,11 @@
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\bin\Release\BLL.dll
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\bin\Release\BLL.pdb
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\bin\Release\DAL.dll
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\bin\Release\Models.dll
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\bin\Release\DAL.pdb
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\bin\Release\Models.pdb
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\obj\Release\BLL.csproj.CopyComplete
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\obj\Release\BLL.dll
+C:\Users\bramv\Desktop\s22\individueel\Killerapp-s22\KillerApp_V2\BLL\obj\Release\BLL.pdb
