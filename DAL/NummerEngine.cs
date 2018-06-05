@@ -8,7 +8,7 @@ using Models;
 
 namespace DAL
 {
-    public class NummerEngine
+    public class NummerEngine : INummerEngine
     {
         string Connectionstring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\users\bramv\source\repos\KillerApp_V2\KillerApp_V2\App_Data\KillerAppDB.mdf;Integrated Security=True";
         public List<Nummer> ViewNummer()
@@ -28,7 +28,7 @@ namespace DAL
             }
             return model;
         }
-        public void AddToPlaylistPlatlistID(int playlistid)
+        public void AddToPlaylistPlaylistID(int playlistid)
         {
             SqlConnection con = new SqlConnection(Connectionstring);
             string sql = "INSERT INTO Nummerperlijst(PlaylistID) VALUES (@playlistid)";
@@ -48,6 +48,22 @@ namespace DAL
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        
+        public List<Nummer> SearchNummer(string searchinput)
+        {
+            string query = "SELECT * FROM Nummer WHERE Naam = @naam";
+            SqlConnection con = new SqlConnection(Connectionstring);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@naam", searchinput);
+            cmd.ExecuteScalar();
+            var model = new List<Nummer>();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                model.Add(Lijsten.GetNummerData(rdr));
+            }
+            con.Close();
+            return model;
+        }
     }
 }

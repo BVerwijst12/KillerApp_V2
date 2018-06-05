@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class UserEngine
+    public class UserEngine : IUserEngine
     {
         public string Connectionstring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\users\bramv\source\repos\KillerApp_V2\KillerApp_V2\App_Data\KillerAppDB.mdf;Integrated Security=True";
 
@@ -27,12 +27,12 @@ namespace DAL
                 checkemail.Parameters.AddWithValue("@naam", g.Username);
                 int UnameExist = (int)checkemail.ExecuteScalar();
 
-                if (EmailExists > 0)
+                if (EmailExists > 1)
                 {
                     con.Close();
                     return "email al in gebruik";
                 }
-                if (UnameExist > 0)
+                if (UnameExist > 1)
                 {
                     con.Close();
                     return "Gebruikersnaam is al in gebruik";

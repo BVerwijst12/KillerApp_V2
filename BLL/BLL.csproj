@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlbumLogic.cs" />
     <Compile Include="ArtiestLogic.cs" />
     <Compile Include="NummerLogic.cs" />
     <Compile Include="PlaylistLogic.cs" />

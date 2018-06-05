@@ -5,44 +5,45 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using DAL;
+using DAL.repositories;
 
 namespace BLL
 {
     public class PlaylistLogic
     {
-        private PlaylistEngine engine = new PlaylistEngine();
+        public PlaylistRepository repo = new PlaylistRepository(new PlaylistEngine());
 
         public void GetByID(int id, Gebruiker g)
         {
-            engine.GetByID(id, g);
+            repo.GetByID(id, g);
         }
         public int AddPlaylist(Playlist p, int gebruikerid)
         {
-            return engine.AddPlaylist(p, gebruikerid);
+            return repo.AddPlaylist(p, gebruikerid);
         }
         public void AddVolgerPerLijst(int gebruikerid, int playlistid)
         {
-            engine.AddVolgerPerLijst(gebruikerid, playlistid);
+            repo.AddVolgerPerLijst(gebruikerid, playlistid);
         }
         public List<Playlist> ViewMyPlaylist(int id)
         {
-            return engine.ViewMyPlayList(id);
+            return repo.ViewMyPlayList(id);
         }
         public List<Playlist> ViewOpenbaarPlaylist()
         {
-            return engine.ViewOpenbaarPlaylist();
+            return repo.ViewOpenbaarPlaylist();
         }
         public List<Playlist> ViewVolgend(int id)
         {
-            return engine.ViewVolgend(id);
+            return repo.ViewVolgend(id);
         }
         public List<Nummer> ViewNummersInLijst(int playlistid)
         {
-            return engine.ViewNummersInLijst(playlistid);
+            return repo.ViewNummersInLijst(playlistid);
         }
         public void Unfollow(int playlistid)
         {
-            engine.Unfollow(playlistid);
+            repo.Unfollow(playlistid);
         }
     }
 }

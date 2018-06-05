@@ -4,25 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DAL.repositories;
 using Models;
 
 namespace BLL
 {
     public class NummerLogic
     {
-        private NummerEngine engine = new NummerEngine();
+        public NummerRepository repo = new NummerRepository(new NummerEngine());
         public List<Nummer> ViewNummer()
         {
-            return engine.ViewNummer();
+            return repo.ViewNummer();
         }
         public void AddToPlaylistPlaylistID(int playlistid)
         {
-            engine.AddToPlaylistPlatlistID(playlistid);
+            repo.AddToPlaylistPlaylistID(playlistid);
         }
         public void AddToPlaylistNummerID(int nummerid)
         {
-            engine.AddToPlaylistNummerID(nummerid);
+            repo.AddToPlaylistNummerID(nummerid);
         }
-
+        public List<Nummer> SearchNummer(string searchinput)
+        {
+            return repo.SearchNummer(searchinput);
+        }
     }
 }

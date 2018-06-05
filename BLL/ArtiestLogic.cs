@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DAL.repositories;
 using Models;
 
 namespace BLL
 {
     public class ArtiestLogic
     {
-        ArtiestEngine aEngine = new ArtiestEngine();
+        public ArtiestRepository repo = new ArtiestRepository(new ArtiestEngine()); 
 
         public List<Artiest> AllArtiest()
         {
-            return aEngine.AllArtiest();
+            return repo.AllArtiest();
         }
         public List<Nummer> NummerVanArtiest(int artiestid)
         {
-            return aEngine.NummerVanArtiest(artiestid);
+            return repo.NummerVanArtiest(artiestid);
         }
     }
 }

@@ -5,20 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using DAL;
+using DAL.repositories;
 
 namespace BLL
 {
     public class UserLogic
     {
-        private UserEngine Engine = new UserEngine();
-
+        public UserRepository repo = new UserRepository(new UserEngine());
+         
         public string register(Gebruiker g)
         {
-            return Engine.Register(g);
+            return repo.Register(g);
         }
         public object Login(string Gebruikersnaam, string Password)
         {
-            return Engine.Login(Gebruikersnaam, Password);
+            return repo.Login(Gebruikersnaam, Password);
         }
     }
 }

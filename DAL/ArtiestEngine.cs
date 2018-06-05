@@ -8,7 +8,7 @@ using Models;
 
 namespace DAL
 {
-    public class ArtiestEngine
+    public class ArtiestEngine : IArtiestEngine
     {
         string Connectionstring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=c:\users\bramv\source\repos\KillerApp_V2\KillerApp_V2\App_Data\KillerAppDB.mdf;Integrated Security=True; MultipleActiveResultSets=True;";
 

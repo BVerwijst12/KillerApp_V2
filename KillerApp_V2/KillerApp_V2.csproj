@@ -142,7 +142,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\ArtiestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NummerController.cs" />
@@ -204,8 +203,7 @@
     <Content Include="Views\Playlist\ViewNummersInLijst.cshtml" />
     <Content Include="Views\Artiest\AllArtiest.cshtml" />
     <Content Include="Views\Artiest\NummerVanArtiest.cshtml" />
-    <Content Include="Views\Album\AllAlbums.cshtml" />
-    <Content Include="Views\Album\ViewNummerOpAlbum.cshtml" />
+    <Content Include="Views\Nummer\SearchNummer.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

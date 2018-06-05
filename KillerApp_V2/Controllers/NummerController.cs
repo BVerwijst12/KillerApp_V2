@@ -22,6 +22,9 @@ namespace KillerApp_V2.Controllers
             nLogic.AddToPlaylistNummerID(Convert.ToInt32(nummerid));
             return RedirectToAction("Index","Home");
         }
-
+        public ActionResult SearchNummer(string searchinput)
+        {
+            return View(nLogic.SearchNummer(searchinput));
+        }
     }
 }
