@@ -24,7 +24,6 @@ namespace KillerApp_V2.Controllers
         public ActionResult Register([Bind(Exclude ="GebruikerID")] Gebruiker g)
         {
             string message = "";
-            bool status = false;
             message = userlogic.register(g);
 
             if (message == "succes")

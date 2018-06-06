@@ -12,32 +12,12 @@ namespace DAL
     {
         public string Connectionstring = Database.GetConnectionString();
 
-
         public string Register(Gebruiker g)
         {
             SqlConnection con = new SqlConnection(Connectionstring);
             try
             {
                 con.Open();
-                SqlCommand checkemail = new SqlCommand("SELECT COUNT(*) FROM [Gebruiker] WHERE ([Email] = @email)", con);
-                checkemail.Parameters.AddWithValue("@email", g.Email);
-                int EmailExists = (int)checkemail.ExecuteScalar();
-
-                SqlCommand naam = new SqlCommand("SELECT COUNT(*) FROM [Gebruiker] WHERE ([Username] = @naam)", con);
-                checkemail.Parameters.AddWithValue("@naam", g.Username);
-                int UnameExist = (int)checkemail.ExecuteScalar();
-
-                if (EmailExists > 1)
-                {
-                    con.Close();
-                    return "email al in gebruik";
-                }
-                if (UnameExist > 1)
-                {
-                    con.Close();
-                    return "Gebruikersnaam is al in gebruik";
-                }
-
                 string InsertQuery = "INSERT INTO [Gebruiker](Username, Wachtwoord, Email, DateofBirth)" +
                     " VALUES(@naam, @wachtwoord, @email, @dateofbirth)";
                 SqlCommand cmd = new SqlCommand(InsertQuery, con);
@@ -47,11 +27,11 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@dateofbirth", g.DateOfBirth);
                 cmd.ExecuteNonQuery();
                 con.Close();
-
             }
-            finally
+            catch(Exception e)
             {
-                con.Close();
+                string error = e.ToString();
+                return error;
             }
             return "succes";
         }

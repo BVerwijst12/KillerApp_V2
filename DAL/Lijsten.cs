@@ -58,5 +58,17 @@ namespace DAL
             };
             return a;
         }
+        public static Gebruiker GetUserData(SqlDataReader rdr)
+        {
+            Gebruiker g = new Gebruiker
+            {
+                GebruikerID = Convert.ToInt32(rdr["GebruikerID"]),
+                Username = (string)rdr["Username"],
+                Email = (string)rdr["Email"],
+                DateOfBirth = Convert.ToDateTime(rdr["DateOfBirth"]),
+                Wachtwoord = (string)rdr["Wachtwoord"]
+            };
+            return g;
+        }
     }
 }

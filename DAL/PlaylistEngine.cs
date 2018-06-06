@@ -19,13 +19,11 @@ namespace DAL
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT GebruikerID, Username, Email FROM [Gebruiker] WHERE GebruikerID = @id", con);
             cmd.Parameters.AddWithValue("@id", id);
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            using (SqlDataReader rdr = cmd.ExecuteReader())
             {
-                while (reader.Read())
+                while (rdr.Read())
                 {
-                    g.GebruikerID = reader.GetInt32(0);
-                    g.Username = reader.GetString(1);
-                    g.Email = reader.GetString(2);
+                    Lijsten.GetUserData(rdr);
                 }
             }
             con.Close();
@@ -46,8 +44,6 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@openbaar", p.Openbaar);
                 cmd.Parameters.AddWithValue("@gemaaktdoorid", g.GebruikerID);
                 cmd.Parameters.Add("@newid", SqlDbType.Int).Direction = ParameterDirection.Output;
-                //cmd.Parameters.AddWithValue("@gebruikerid", g.GebruikerID);
-                //cmd.Parameters.AddWithValue("@playlistid", p.PlaylistID);
 
                 cmd.ExecuteScalar();
                 con.Close();
@@ -57,7 +53,6 @@ namespace DAL
             {
                 return -1;
             }
-            //return (int)
         }
         public void AddVolgerPerLijst(int gebruikerid, int playlistid)
         {
@@ -75,19 +70,17 @@ namespace DAL
         {
             string sql = "SELECT * FROM Playlist WHERE (GemaaktdoorID = @gebruikersid)";
             var model = new List<Playlist>();
-            using (SqlConnection con = new SqlConnection(Connectionstring))
+            SqlConnection con = new SqlConnection(Connectionstring);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@gebruikersid", id);
+            cmd.ExecuteNonQuery();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@gebruikersid", id);
-                cmd.ExecuteNonQuery();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    model.Add(Lijsten.GetPlaylistData(rdr));
-                }
-                con.Close();
+                model.Add(Lijsten.GetPlaylistData(rdr));
             }
+            con.Close();
             return model;
         }
         public List<Playlist> ViewOpenbaarPlaylist()
