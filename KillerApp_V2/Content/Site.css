@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+.img_slider {
+    position: relative;
+    width: 100px;
+    height: 400px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

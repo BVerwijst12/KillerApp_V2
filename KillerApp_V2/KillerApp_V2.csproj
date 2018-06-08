@@ -221,6 +221,7 @@
     <Content Include="Views\Artiest\AllArtiest.cshtml" />
     <Content Include="Views\Artiest\NummerVanArtiest.cshtml" />
     <Content Include="Views\Nummer\SearchNummer.cshtml" />
+    <Content Include="Views\Nummer\VoegNummerToe.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

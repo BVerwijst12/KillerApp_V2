@@ -11,6 +11,7 @@ namespace BLL
 {
     public class NummerLogic
     {
+        NummerEngine engine = new NummerEngine();
         public NummerRepository repo = new NummerRepository(new NummerEngine());
         public List<Nummer> ViewNummer()
         {
@@ -27,6 +28,10 @@ namespace BLL
         public List<Nummer> SearchNummer(string searchinput)
         {
             return repo.SearchNummer(searchinput);
+        }
+        public void AddToPlaylist(int nummerid, int playlistid)
+        {
+            engine.AddToPlaylist(nummerid, playlistid);
         }
     }
 }

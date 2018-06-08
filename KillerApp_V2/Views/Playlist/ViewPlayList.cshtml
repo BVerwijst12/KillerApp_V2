@@ -2,8 +2,9 @@
 @using Models
 @model List<Playlist>
     @{
-    ViewBag.Title = "ViewPlayList";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+        ViewBag.Title = "ViewPlayList";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var Playlist = Session["Playlist"] as Playlist;
 }
 
 <h2>Mijn Lijsten</h2>

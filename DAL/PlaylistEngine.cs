@@ -132,12 +132,14 @@ namespace DAL
         }
         public List<Nummer> ViewNummersInLijst(int playlistid)
         {
+            Delete();
             string sql = "SELECT NummerID FROM Nummerperlijst WHERE PlaylistID = @playlistid";
             List<int> nummerid = new List<int>();
             SqlConnection con = new SqlConnection(Connectionstring);
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
             cmd.Parameters.AddWithValue("@playlistid", playlistid);
+            cmd.ExecuteNonQuery();
             SqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
@@ -168,6 +170,15 @@ namespace DAL
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@playlistid", playlistid);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void Delete()
+        {
+            string sql = "DELETE FROM Nummerperlijst WHERE NummerID IS null";
+            SqlConnection con = new SqlConnection(Connectionstring);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
         }

@@ -1,0 +1,42 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using Models
+@model List<Nummer>
+@{
+    ViewBag.Title = "VoegNummerToe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Playlist = Session["Playlist"] as Playlist;
+}
+
+<div class="container">
+    <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="row">
+                    @foreach (var nummer in Model)
+                    {
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="@Url.Content(nummer.CoverURL)" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        @nummer.Naam <br />
+                                        @nummer.Jaar <br />
+                                        @nummer.Genre <br />
+                                        @Html.ActionLink("Voeg nummer toe", "VoegNummerToe", new { nummerid = nummer.NummerID, controller = "Nummer" })
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
