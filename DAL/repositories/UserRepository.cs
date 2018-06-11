@@ -14,8 +14,7 @@ namespace DAL.repositories
         {
             this.Interface = Interface;
         }
-
-        public object Login(string Gebruikersnaam, string Password)
+        public object Checklogin(string Gebruikersnaam, string Password)
         {
             return Interface.Login(Gebruikersnaam, Password);
         }

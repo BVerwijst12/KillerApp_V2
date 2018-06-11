@@ -29,9 +29,6 @@ namespace BLL
         {
             return repo.SearchNummer(searchinput);
         }
-        public void AddToPlaylist(int nummerid, int playlistid)
-        {
-            engine.AddToPlaylist(nummerid, playlistid);
-        }
+
     }
 }

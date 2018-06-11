@@ -132,7 +132,7 @@ namespace DAL
         }
         public List<Nummer> ViewNummersInLijst(int playlistid)
         {
-            Delete();
+            DeleteNull();
             string sql = "SELECT NummerID FROM Nummerperlijst WHERE PlaylistID = @playlistid";
             List<int> nummerid = new List<int>();
             SqlConnection con = new SqlConnection(Connectionstring);
@@ -173,7 +173,7 @@ namespace DAL
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public void Delete()
+        public void DeleteNull()
         {
             string sql = "DELETE FROM Nummerperlijst WHERE NummerID IS null";
             SqlConnection con = new SqlConnection(Connectionstring);

@@ -45,19 +45,7 @@ namespace DAL
             };
             return a;
         }
-        public static Album GetAlbumData(SqlDataReader rdr)
-        {
-            Album a = new Album
-            {
-                AlbumID = Convert.ToInt32(rdr["AlbumID"]),
-                Naam = (string)rdr["Naam"],
-                Genre = (string)rdr["Genre"],
-                Jaar = Convert.ToInt32(rdr["Jaar"]),
-                Lengte = Convert.ToInt32(rdr["Lengte"]),
-                Coverurl = (string)rdr["Coverurl"]
-            };
-            return a;
-        }
+
         public static Gebruiker GetUserData(SqlDataReader rdr)
         {
             Gebruiker g = new Gebruiker

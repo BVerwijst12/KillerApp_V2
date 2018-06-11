@@ -19,7 +19,7 @@ namespace BLL
         }
         public object Login(string Gebruikersnaam, string Password)
         {
-            return repo.Login(Gebruikersnaam, Password);
+            return repo.Checklogin(Gebruikersnaam, Password);
         }
     }
 }
