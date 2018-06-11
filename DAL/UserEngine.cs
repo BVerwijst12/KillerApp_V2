@@ -38,39 +38,28 @@ namespace DAL
 
         public object Login(string Gebruikersnaam, string Password)
         {
-            int resultuser = 0;
             SqlConnection con = new SqlConnection(Connectionstring);
             try
             {
+                string UserQuery = @"SELECT GebruikerID, Username, Email, DateofBirth FROM [Gebruiker] WHERE Username = @username and Wachtwoord = @wachtwoord";
+                Gebruiker g = new Gebruiker();
+                SqlCommand cmd2 = new SqlCommand(UserQuery, con);
+                cmd2.Parameters.AddWithValue("@username", Gebruikersnaam);
+                cmd2.Parameters.AddWithValue("@wachtwoord", Password);
                 con.Open();
-                string query = @"SELECT GebruikerID FROM [Gebruiker] WHERE Username = @username AND Wachtwoord = @wachtwoord";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@username", Gebruikersnaam);
-                cmd.Parameters.AddWithValue("@wachtwoord", Password);
-                resultuser = (int)cmd.ExecuteScalar();
-                con.Close();
-                if (resultuser > 0)
+                using (SqlDataReader reader = cmd2.ExecuteReader())
                 {
-                    string UserQuerty = @"SELECT GebruikerID, Username, Email, DateofBirth FROM [Gebruiker] WHERE Username = @username and Wachtwoord = @wachtwoord";
-                    Gebruiker g = new Gebruiker();
-                    SqlCommand cmd2 = new SqlCommand(UserQuerty, con);
-                    cmd2.Parameters.AddWithValue("@username", Gebruikersnaam);
-                    cmd2.Parameters.AddWithValue("@wachtwoord", Password);
-                    con.Open();
-                    using (SqlDataReader reader = cmd2.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            g.GebruikerID = reader.GetInt32(0);
-                            g.Username = reader.GetString(1);
-                            g.Email = reader.GetString(2);
-                            g.DateOfBirth = reader.GetDateTime(3);
-                            g.Username = Gebruikersnaam;
-                        }
+                        g.GebruikerID = reader.GetInt32(0);
+                        g.Username = reader.GetString(1);
+                        g.Email = reader.GetString(2);
+                        g.DateOfBirth = reader.GetDateTime(3);
+                        g.Username = Gebruikersnaam;
                     }
-                    con.Close();
-                    return g;
                 }
+                con.Close();
+                return g;
             }
             catch (Exception e)
             {
@@ -78,8 +67,6 @@ namespace DAL
                 con.Close();
                 return "gegevens bestaan niet";
             }
-            return "unknown error";
         }
-
     }
 }
