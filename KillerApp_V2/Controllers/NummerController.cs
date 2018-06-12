@@ -12,15 +12,14 @@ namespace KillerApp_V2.Controllers
     {
         NummerLogic nLogic = new NummerLogic();
         // GET: Nummer
-        public ActionResult AddToPlaylistPlaylistID(int? playlistid)
+        public ActionResult AddToPlaylist()
         {
-            nLogic.AddToPlaylistPlaylistID(Convert.ToInt32(playlistid));
             return View(nLogic.ViewNummer());
         }
-        public ActionResult AddToPlaylistNummerID(int? nummerid)
-        {
-            nLogic.AddToPlaylistNummerID(Convert.ToInt32(nummerid));
-            return RedirectToAction("Index","Home");
+        public ActionResult AddNummerToPlaylist(int? playlistid, int? nummerid)
+        {          
+            nLogic.AddToPlaylist(Convert.ToInt32(playlistid), Convert.ToInt32(nummerid));
+            return View();
         }
         public ActionResult SearchNummer(string searchinput)
         {

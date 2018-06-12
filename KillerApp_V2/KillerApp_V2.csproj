@@ -216,12 +216,13 @@
     <Content Include="Views\Playlist\VoegNummerToe.cshtml" />
     <Content Include="Views\Playlist\ViewVolgend.cshtml" />
     <Content Include="Views\Playlist\AddToPlaylistPlaylistID.cshtml" />
-    <Content Include="Views\Nummer\AddToPlaylistPlaylistID.cshtml" />
     <Content Include="Views\Playlist\ViewNummersInLijst.cshtml" />
     <Content Include="Views\Artiest\AllArtiest.cshtml" />
     <Content Include="Views\Artiest\NummerVanArtiest.cshtml" />
     <Content Include="Views\Nummer\SearchNummer.cshtml" />
     <Content Include="Views\Nummer\VoegNummerToe.cshtml" />
+    <Content Include="Views\Nummer\AddToPlaylist.cshtml" />
+    <Content Include="Views\Nummer\AddNummerToPlaylist.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

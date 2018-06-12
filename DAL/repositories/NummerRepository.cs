@@ -14,13 +14,9 @@ namespace DAL.repositories
         {
             this.Interface = Interface;
         }
-        public void AddToPlaylistNummerID(int nummerid)
+        public void AddToPlaylist(int nummerid, int playlistid)
         {
-            Interface.AddToPlaylistNummerID(nummerid);
-        }
-        public void AddToPlaylistPlaylistID(int playlistid)
-        {
-            Interface.AddToPlaylistPlaylistID(playlistid);
+            Interface.AddToPlaylist(nummerid, playlistid);
         }
         public List<Nummer> SearchNummer(string searchinput)
         {

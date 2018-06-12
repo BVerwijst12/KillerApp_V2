@@ -17,13 +17,13 @@ namespace BLL
         {
             return repo.ViewNummer();
         }
-        public void AddToPlaylistPlaylistID(int playlistid)
+        //public void AddToPlaylistPlaylistID(int playlistid)
+        //{
+        //    repo.AddToPlaylistPlaylistID(playlistid);
+        //}
+        public void AddToPlaylist(int Playlistid, int nummerid)
         {
-            repo.AddToPlaylistPlaylistID(playlistid);
-        }
-        public void AddToPlaylistNummerID(int nummerid)
-        {
-            repo.AddToPlaylistNummerID(nummerid);
+            repo.AddToPlaylist(Playlistid, nummerid);
         }
         public List<Nummer> SearchNummer(string searchinput)
         {

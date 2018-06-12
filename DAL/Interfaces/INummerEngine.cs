@@ -5,8 +5,7 @@ namespace DAL
 {
     public interface INummerEngine
     {
-        void AddToPlaylistNummerID(int nummerid);
-        void AddToPlaylistPlaylistID(int playlistid);
+        void AddToPlaylist(int playlistid, int nummerid);
         List<Nummer> SearchNummer(string searchinput);
         List<Nummer> ViewNummer();
     }
