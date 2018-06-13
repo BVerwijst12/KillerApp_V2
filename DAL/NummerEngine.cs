@@ -39,16 +39,6 @@ namespace DAL
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        //public void AddToPlaylistNummerID(int nummerid)
-        //{
-        //    SqlConnection con = new SqlConnection(Connectionstring);
-        //    string sql = "UPDATE Nummerperlijst SET NummerID = @nummerid WHERE Id= (SELECT MAX(Id) FROM Nummerperlijst)";
-        //    SqlCommand cmd = new SqlCommand(sql, con);
-        //    con.Open();
-        //    cmd.Parameters.AddWithValue("@nummerid", nummerid);
-        //    cmd.ExecuteNonQuery();
-        //    con.Close();
-        //}
         public List<Nummer> SearchNummer(string searchinput)
         {
             string query = "SELECT * FROM Nummer WHERE Naam = @naam";

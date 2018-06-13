@@ -11,16 +11,11 @@ namespace BLL
 {
     public class NummerLogic
     {
-        NummerEngine engine = new NummerEngine();
         public NummerRepository repo = new NummerRepository(new NummerEngine());
         public List<Nummer> ViewNummer()
         {
             return repo.ViewNummer();
         }
-        //public void AddToPlaylistPlaylistID(int playlistid)
-        //{
-        //    repo.AddToPlaylistPlaylistID(playlistid);
-        //}
         public void AddToPlaylist(int Playlistid, int nummerid)
         {
             repo.AddToPlaylist(Playlistid, nummerid);
